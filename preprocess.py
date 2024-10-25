@@ -4,14 +4,14 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 import streamlit as st
 
 def preprocess_data():
-    """Preprocess data by encoding and scaling."""
+   
     if st.session_state['data'] is not None:
         categorical_cols = ['Country']
         numerical_cols = ['Quantity', 'UnitPrice']
-
+         """Using OHE for handling Categorical data"""
         encoder = OneHotEncoder(drop='first', sparse_output=False)
         encoded_data = encoder.fit_transform(st.session_state['data'][categorical_cols])
-
+        """Using Stadard scaler on Numerical data for scaling"""
         scaler = StandardScaler()
         scaled_data = scaler.fit_transform(st.session_state['data'][numerical_cols])
 
