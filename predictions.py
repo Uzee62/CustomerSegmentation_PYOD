@@ -1,10 +1,10 @@
-# predictions.py
+
 import streamlit as st
 from sklearn.metrics import classification_report
 import pandas as pd
 
 def display_predictions():
-    """Display model accuracy and predictions."""
+    """Displaying model accuracy and predictions."""
     if st.session_state['data'] is None or st.session_state['model'] is None:
         st.warning("Please upload data first.")
     else:
@@ -30,7 +30,7 @@ def display_predictions():
         
         report = classification_report(true_labels, predicted_labels, output_dict=True)
 
-# Convert classification report to DataFrame
+# Converting classification report to DataFrame
         report_df = pd.DataFrame(report).transpose()
 
         # Display the Classification Report in tabular form
@@ -44,7 +44,7 @@ def display_predictions():
             "F1-Score": [report['1']['f1-score']]
         }
 
-        # Convert accuracy metrics to DataFrame
+        # Converting accuracy metrics to DataFrame
         accuracy_df = pd.DataFrame(accuracy_metrics)
 
         # Display the Accuracy Metrics in tabular form
