@@ -6,7 +6,7 @@ from model import train_model
 from predictions import display_predictions
 from visualize import visualize_data
 
-# Initialize session state
+# Initializing session state
 if 'data' not in st.session_state:
     st.session_state['data'] = None
 if 'processed_data' not in st.session_state:
@@ -14,7 +14,7 @@ if 'processed_data' not in st.session_state:
 if 'model' not in st.session_state:
     st.session_state['model'] = None
 
-# Main Application
+# Main UI
 def main():
     st.title("Customer Segmentation Using PYOD")
     st.sidebar.title("Navigation")
