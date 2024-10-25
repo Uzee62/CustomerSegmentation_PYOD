@@ -1,9 +1,9 @@
-# model.py
+
 from pyod.models.knn import KNN
 import streamlit as st
 
 def train_model():
-    """Train KNN model and label outliers."""
+    """Training the model using PYOD's KNN and label outliers using knn.labels_."""
     if st.session_state['processed_data'] is not None:
         knn = KNN()
         knn.fit(st.session_state['processed_data'])
