@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 def upload_data():
-    """Upload CSV or Excel file"""
+    #Upload CSV or Excel file
     
     
     expected_columns = [
