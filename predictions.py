@@ -4,7 +4,7 @@ from sklearn.metrics import classification_report
 import pandas as pd
 
 def display_predictions():
-    """Displaying model accuracy and predictions."""
+    #Displaying model accuracy and predictions.
     if st.session_state['data'] is None or st.session_state['model'] is None:
         st.warning("Please upload data first.")
     else:
