@@ -3,7 +3,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 def visualize_data():
-    """Display visualization options."""
+    #Display visualization options.
+    
     st.header("Visualize Outliers")
     graph_type = st.selectbox("Select Graph", ["Bar Graph", "Pie Chart", "Scatter Plot"])
     if graph_type == "Bar Graph":
@@ -12,7 +13,8 @@ def visualize_data():
         plot_pie_chart()
     elif graph_type == "Scatter Plot":
         plot_scatter_plot()
-"""Plotting a bar graph to visualize the distribution of outliers across countries"""
+        
+#Plotting a bar graph to visualize the distribution of outliers across countries
 def plot_bar_chart():
     
     country_outliers = st.session_state['data'][st.session_state['data']['outlier'] == 1]['Country'].value_counts()
@@ -22,7 +24,7 @@ def plot_bar_chart():
     ax.set_xlabel("Country")
     ax.set_ylabel("Number of Outliers")
     st.pyplot(fig)
-"""Ploting a pie chart for outliers vs in-outliers"""
+#Ploting a pie chart for outliers vs in-outliers
 def plot_pie_chart():
   
     outlier_counts = st.session_state['data']['outlier'].value_counts()
@@ -30,7 +32,8 @@ def plot_pie_chart():
     ax.pie(outlier_counts, labels=['Non-Outliers', 'Outliers'], autopct='%1.1f%%', colors=['green', 'red'])
     ax.set_title("Outliers vs Non-Outliers")
     st.pyplot(fig)
- """Ploingt scatter plot for Quantity vs Unit Price with outliers highlighted."""
+    
+ #Ploingt scatter plot for Quantity vs Unit Price with outliers highlighted.
 def plot_scatter_plot():
    
     fig, ax = plt.subplots()
